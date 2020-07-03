@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_hint">검색…</string>
+    <string name="no_result_found">결과가 없습니다</string>
+    <string name="select_country">국가 선택</string>
+</resources>
