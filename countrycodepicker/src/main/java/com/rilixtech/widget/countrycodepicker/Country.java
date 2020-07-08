@@ -1,5 +1,7 @@
 package com.rilixtech.widget.countrycodepicker;
 
+import java.util.Locale;
+
 /**
  * Created by hbb20 on 11/1/16.
  *
@@ -40,7 +42,12 @@ public class Country {
   boolean isEligibleForQuery(String query) {
     query = query.toLowerCase();
     return getName().toLowerCase().contains(query)
+        || getLocale(iso).getDisplayCountry().toLowerCase().contains(query)
         || getIso().toLowerCase().contains(query)
         || getPhoneCode().toLowerCase().contains(query);
+  }
+
+  private Locale getLocale(String iso) throws NullPointerException {
+    return new Locale(Locale.getDefault().getLanguage(), iso);
   }
 }
